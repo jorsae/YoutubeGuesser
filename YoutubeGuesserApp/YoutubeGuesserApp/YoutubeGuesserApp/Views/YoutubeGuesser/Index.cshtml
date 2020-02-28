@@ -1,0 +1,48 @@
+﻿@model Int32
+
+@{
+    ViewData["Title"] = "Guess which YouTube video has the most views";
+}
+
+@section metatags{
+    <meta name="description" content="Do you think you know YouTube videos and what's popular? Guess which YouTube video you think has the most views and reach the top of the leaderboards" />
+}
+
+@section stylesheets{
+    <link rel="stylesheet" type="text/css" href="~/css/index.min.css">
+    <link rel="stylesheet" type="text/css" href="~/css/video.min.css">
+    <link rel="stylesheet" type="text/css" href="~/css/tutorial.min.css">
+}
+
+<div class="game-header">
+    <button id="howToPlay" class="button how-to-play">How to play</button>
+    <button id="exitTutorial" class="button how-to-play hidden">Exit Tutorial</button>
+    <h1 id="score" class="score">Score: @Model</h1>
+    <h1 id="tutorialScore" class="score hidden">Score: 0</h1>
+</div>
+
+<div id="videoContainer" class="video-container">
+    <div id="tutorialTextDiv" class="tutorial-text-div hidden">
+        <p id="tutorialText">text</p>
+        <button id="tutorialTextConfirmation" class="button">Ok!</button>
+    </div>
+
+    <div id="loadingAnimation" class="loading-animation loading-animation-center"></div>
+    <div id="video1" class="video">
+        <p id="videoTitle1" class="video-title"></p>
+        <p id="tutorialTitle1" class="video-title hidden">Click me!</p>
+        <img id="videoImage1" rel="nofollow">
+        <img class="hidden" id="tutorialImage1" src="~/images/tutorial_image1.jpg" />
+    </div>
+    <div id="video2" class="video">
+        <p id="videoTitle2" class="video-title"></p>
+        <p id="tutorialTitle2" class="video-title hidden">Don't click me!</p>
+        <img id="videoImage2" rel="nofollow">
+        <img class="hidden" id="tutorialImage2" src="~/images/tutorial_image2.jpg" />
+    </div>
+</div>
+
+@section scripts {
+    <script type="text/javascript" src="~/js/youtubeguesser/youtubeguesser.min.js"></script>
+    <script type="text/javascript" src="~/js/tutorial.min.js"></script>
+}

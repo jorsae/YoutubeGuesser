@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29306.81
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YoutubeGuesserApp", "YoutubeGuesserApp\YoutubeGuesserApp.csproj", "{E5082475-FDB7-4577-AA78-B45F135C57A3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YoutubeGuesserApp.Library", "YoutubeGuesserApp.Library\YoutubeGuesserApp.Library.csproj", "{92FABAE1-CDA6-4B40-A17C-9B251D5B90FE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YoutubeGuesserApp.Api", "YoutubeGuesserApp.Api\YoutubeGuesserApp.Api.csproj", "{46D2BA4E-F796-4E43-AB80-A965D9A603C2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YoutubeGuesserApp.Model", "YoutubeGuesserApp.Model\YoutubeGuesserApp.Model.csproj", "{03C602A5-6123-4A3C-9AF3-668CC895C16B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YoutubeGuesserApp.Tests", "YoutubeGuesserApp.Tests\YoutubeGuesserApp.Tests.csproj", "{4DF26454-D5AB-4F83-B6C6-8062D5D8DD58}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E5082475-FDB7-4577-AA78-B45F135C57A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5082475-FDB7-4577-AA78-B45F135C57A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5082475-FDB7-4577-AA78-B45F135C57A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5082475-FDB7-4577-AA78-B45F135C57A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92FABAE1-CDA6-4B40-A17C-9B251D5B90FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92FABAE1-CDA6-4B40-A17C-9B251D5B90FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92FABAE1-CDA6-4B40-A17C-9B251D5B90FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92FABAE1-CDA6-4B40-A17C-9B251D5B90FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46D2BA4E-F796-4E43-AB80-A965D9A603C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46D2BA4E-F796-4E43-AB80-A965D9A603C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46D2BA4E-F796-4E43-AB80-A965D9A603C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46D2BA4E-F796-4E43-AB80-A965D9A603C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03C602A5-6123-4A3C-9AF3-668CC895C16B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03C602A5-6123-4A3C-9AF3-668CC895C16B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03C602A5-6123-4A3C-9AF3-668CC895C16B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03C602A5-6123-4A3C-9AF3-668CC895C16B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DF26454-D5AB-4F83-B6C6-8062D5D8DD58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DF26454-D5AB-4F83-B6C6-8062D5D8DD58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DF26454-D5AB-4F83-B6C6-8062D5D8DD58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DF26454-D5AB-4F83-B6C6-8062D5D8DD58}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7EC1CBAF-7E05-4168-AEDB-6949F3882388}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ViewGuessr</title>
+    <link rel="icon" type="image/png" href="~/images/viewguessr_icon.png" />
+    <link rel="shortcut icon" type="image/png" href="~/images/viewguessr_icon.png" />
+    <link rel="stylesheet" href="~/css/modal.min.css" />
+    @RenderSection("metatags", false)
+    @RenderSection("stylesheets", false)
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-149356219-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-149356219-1');
+    </script>
+
+    <environment include="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+    </environment>
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a asp-area="" asp-controller="YoutubeGuesser" asp-action="Index" class="navbar-brand" title="ViewGuessr game">ViewGuessr</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a asp-area="" asp-controller="YoutubeGuesser" asp-action="Highscore" title="ViewGuessr highscores">Highscores</a></li>
+                    <li><a href="/About" title="About ViewGuessr">About</a></li>
+                    <li><a href="#" id="feedbackModalButton" title="Opens up a feedback form">Feedback</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <partial name="_CookieConsentPartial" />
+
+    <div class="container body-content">
+        <modal id="feedbackModal" class="modal">
+            <div class="modal-content">
+                <span id="feedbackModalClose" class="modal-close">&times;</span>
+                <p class="feedback-header">Feedback</p>
+                <form class="feedback-form" id="feedbackForm" onsubmit="return submitFeedback();">
+                    <div class="feedback-information">
+                        <label for="feedbackTitle">Title   </label>
+                        <div class="resizeable-text-box">
+                            <input id="feedbackTitle" type="text" placeholder="Title" class="feedback-form-data" required />
+                        </div>
+                    </div>
+                    <div class="feedback-information">
+                        <label for="feedbackEmail">Email </label>
+                        <div class="resizeable-text-box">
+                            <input id="feedbackEmail" type="text" placeholder="Email (optional)" class="feedback-form-data" />
+                        </div>
+                    </div>
+                    <textarea id="feedbackBody" class="feedback-form-body" placeholder="Write the contents of your feedback here." rows="4" required></textarea>
+                    <input type="submit" id="feedbackSubmit" class="button" value="Submit feedback" />
+                </form>
+            </div>
+        </modal>
+        @RenderBody()
+        <hr />
+        <footer class="footer">
+            <p>&copy; 2019 - ViewGuessr</p>
+        </footer>
+    </div>
+
+    <environment include="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                crossorigin="anonymous"
+                integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd">
+        </script>
+    </environment>
+
+    <script type="text/javascript" src="~/js/http.min.js"></script>
+    <script type="text/javascript" src="~/js/data.min.js"></script>
+    <script type="text/javascript" src="~/js/feedback.min.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

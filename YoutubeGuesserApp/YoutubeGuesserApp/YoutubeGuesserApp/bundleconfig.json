@@ -1,0 +1,124 @@
+﻿[
+  {
+    "outputFileName": "wwwroot/css/site.min.css",
+    "inputFiles": [
+      "wwwroot/css/site.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/index.min.css",
+    "inputFiles": [
+      "wwwroot/css/index.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/video.min.css",
+    "inputFiles": [
+      "wwwroot/css/video.css",
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/tutorial.min.css",
+    "inputFiles": [
+      "wwwroot/css/tutorial.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/modal.min.css",
+    "inputFiles": [
+      "wwwroot/css/modal.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/cookie.min.css",
+    "inputFiles": [
+      "wwwroot/css/cookie.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/404.min.css",
+    "inputFiles": [
+      "wwwroot/css/404.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/youtubeguesser/youtubeguesser.min.js",
+    "inputFiles": [
+      "wwwroot/js/youtubeguesser/videos.js",
+      "wwwroot/js/youtubeguesser/gui.js",
+      "wwwroot/js/youtubeguesser/history.js",
+      "wwwroot/js/youtubeguesser/tutorial.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/tutorial.min.js",
+    "inputFiles": [
+      "wwwroot/js/tutorial.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+    {
+    "outputFileName": "wwwroot/js/game-history.min.js",
+    "inputFiles": [
+      "wwwroot/js/game-history.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/http.min.js",
+    "inputFiles": [
+      "wwwroot/js/http.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/data.min.js",
+    "inputFiles": [
+      "wwwroot/js/data.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/highscore.min.js",
+    "inputFiles": [
+      "wwwroot/js/highscore.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/feedback.min.js",
+    "inputFiles": [
+      "wwwroot/js/feedback.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  }
+]

@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Page not found";
+}
+
+@section stylesheets{
+    <link rel="stylesheet" href="~/css/404.min.css" />
+}
+
+<h1 class="h1-404">404 - Page not found</h1>
+
+<div class="content-404">
+    <p>Oh no! The page you were looking for was not found.</p>
+    <p>If you think this is a mistake, reporting it would be appreciated.</p>
+    <button id="feedbackModalButton404">Report</button>
+</div>
+
+<div class="content-404">
+    <p>You can get back to the game here <a href="/">Youtube View Guesser</a></p>
+    <p>Or you can take a look at the <a href="/youtubeguesser/highscore">Highscores</a></p>
+</div>
+
+@section scripts{
+    <script>
+        document.getElementById("feedbackModalButton404").onclick = function () {
+            document.getElementById("feedbackModal").style.display = "block";
+        }
+    </script>
+}

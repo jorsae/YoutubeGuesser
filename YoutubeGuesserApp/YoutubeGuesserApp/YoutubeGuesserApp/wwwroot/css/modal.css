@@ -1,0 +1,110 @@
+﻿.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    color: #19180A;
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Makes feedbackModal always be in front. Even in front of "tutorial modal" */
+#feedbackModal {
+    z-index: 5000;
+}
+
+.modal-content {
+    background-color: #FFF2C1 !important;
+    margin: auto;
+    padding: 8px;
+    border: 1px solid #888;
+    width: 40%;
+    height: auto;
+    margin-top: 16px;
+}
+
+@media all and (max-width: 1400px) {
+    .modal-content {
+        width: 50%;
+    }
+}
+@media all and (max-width: 900px) {
+    .modal-content {
+        width: 60%;
+    }
+}
+@media all and (max-width: 600px) {
+    .modal-content {
+        width: auto;
+        margin-left: 4px;
+        margin-right: 4px;
+    }
+    .feedback-header {
+        font-size: 16px;
+    }
+}
+
+.feedback-header {
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 8px;
+    text-align: center;
+    color: #e71d36;
+    text-decoration: underline;
+}
+
+/* Title and Email boxes */
+.feedback-information {
+    display: inline-block;
+    width: 100%;
+}
+
+.feedback-information label {
+    float: left;
+}
+
+.resizeable-text-box {
+    margin-bottom: 8px;
+    overflow: hidden;
+}
+.resizeable-text-box > input[type="text"] {
+    width: 100%;
+}
+
+/* Email text-box */
+#feedbackEmail {
+    margin-bottom: 16px;
+}
+
+/* Body content */
+.feedback-form-body {
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+/* Submit feedback button */
+#feedbackSubmit {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+/* Close button */
+.modal-close {
+    color: #19180A;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal-close:focus,
+.modal-close:hover {
+    color: #e71d36;
+    text-decoration: none;
+    cursor: pointer;
+}

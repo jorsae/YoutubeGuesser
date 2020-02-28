@@ -1,0 +1,107 @@
+﻿@model List<YoutubeGuesserApp.Model.YoutubeVideoView>
+@{
+    ViewData["Title"] = "Game over, YouTube video views guesser";
+}
+@section metatags{
+    <meta name="description" content="Game over. The other YouTube video have more views than expected." />
+}
+@section stylesheets{
+    <link rel="stylesheet" type="text/css" href="~/css/index.min.css">
+    <link rel="stylesheet" type="text/css" href="~/css/video.min.css">
+}
+
+
+<div class="game-information">
+    <h1 class="game-over-header">Game Over</h1>
+
+    <div class="game-information-element">
+        <p class="game-score">Score: @ViewBag.correctGuesses</p>
+    </div>
+
+    <form action="/youtubeguesser" class="retry-form">
+        <input class="button retry-button wiggle" type="submit" title="Goes back to the YouTube View Guesser game" value="Try again!" />
+    </form>
+
+    <div class="game-information-element">
+        <p class="game-score">Submit to highscores or share</p>
+        <div id="highscore-submit">
+            <input type="text" id="aliasHighscore" placeholder="Alias" title="No profanity/advertisement" onkeypress="validate(event)" />
+            <button id="submitHighscore" type="submit" title="Submits your score to the highscores">Submit!</button>
+            <span id="highscoreLoadingAnimation" class="loading-animation hidden"></span>
+        </div>
+        <p id="highscoreSubmitInfo"></p>
+
+        <a id="tweetButton"
+           class="twitter-share-button"
+           onclick="twitter"
+           data-size="large"
+           href="https://twitter.com/intent/tweet?text=@ViewBag.tweetMessage">
+            Share your score on Twitter!
+        </a>
+    </div>
+</div>
+
+<hr />
+<h2 class="game-history-header">Game history</h2>
+<h3 class="embed-info">Click on a thumbnail to play the video</h3>
+<div class="video-history-container">
+    @{
+        if (Model != null)
+        {
+            int modelCount = Model.Count();
+            for (int i = 0; i < modelCount - 1; i += 2)
+            {
+                int index = i + 1;
+                bool firstVideoCorrect = (Model[i].ViewCount >= Model[index].ViewCount) ? true : false;
+                string firstVideo = (firstVideoCorrect) ? "video-correct" : "video-wrong";
+                string secondVideo = (firstVideoCorrect) ? "video-wrong" : "video-correct";
+
+                <div class="video video-history">
+                    <h2 class="video-title center">@Model[i].Title</h2>
+                    <div class="text-container center">
+                        <p class="video-information center @firstVideo">
+                            Views: @String.Format("{0:n0}", Model[i].ViewCount) | Channel: @Model[i].ChannelName
+                        </p>
+                    </div>
+                    <div class="video-image @firstVideo" id="@Model[i].VideoId">
+                        <img src="@Model[i].GetThumbnail()" alt="Thumbnail for YouTube video with title: &quot;@Model[i].Title&quot;" id="img:@Model[i].VideoId" rel="nofollow" onclick="playVideo(&quot;@Model[i].VideoId&quot;);" />
+                    </div>
+                </div>
+
+                <div class="video video-history">
+                    <h2 class="video-title center">@Model[index].Title</h2>
+                    <div class="text-container center">
+                        <p class="video-information center @secondVideo">
+                            Views: @String.Format("{0:n0}", Model[index].ViewCount) | Channel: @Model[index].ChannelName
+                        </p>
+                    </div>
+                    <div class="video-image @secondVideo" id="@Model[index].VideoId">
+                        <img src="@Model[index].GetThumbnail()" alt="Thumbnail for YouTube video with title: &quot;@Model[index].Title&quot;" id="img:@Model[index].VideoId" rel="nofollow" onclick="playVideo(&quot;@Model[index].VideoId&quot;);" />
+                    </div>
+                </div>
+            }
+        }
+    }
+</div>
+
+@section scripts {
+    <script type="text/javascript" src="~/js/highscore.min.js"></script>
+    <script type="text/javascript" src="~/js/game-history.min.js"></script>
+    <script>
+        window.twttr = (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0],
+                t = window.twttr || {};
+            if (d.getElementById(id)) return t;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "https://platform.twitter.com/widgets.js";
+            fjs.parentNode.insertBefore(js, fjs);
+
+            t._e = [];
+            t.ready = function (f) {
+                t._e.push(f);
+            };
+
+            return t;
+        }(document, "script", "twitter-wjs"));</script>
+}

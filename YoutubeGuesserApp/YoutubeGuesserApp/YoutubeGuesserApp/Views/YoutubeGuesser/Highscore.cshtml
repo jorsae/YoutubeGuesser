@@ -1,0 +1,41 @@
+﻿@model IEnumerable<YoutubeGuesserApp.Model.Highscore>
+@{
+    ViewData["Title"] = "Highscores for YouTube video views guesser";
+}
+@section metatags{
+    <meta name="description" content="Only the ones who know YouTube and what's popular will show up on this highscore!" />
+}
+
+<h1>Top @Model.Count() scores</h1>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Alias")
+        </th>
+        <th>
+            @Html.DisplayName("Score")
+        </th>
+        <th>
+            @Html.DisplayName("Date")
+        </th>
+    </tr>
+
+    @if (Model != null)
+    {
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Alias)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Score)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateAdded)
+                </td>
+            </tr>
+        }
+    }
+</table>
